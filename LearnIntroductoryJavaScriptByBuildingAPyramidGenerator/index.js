@@ -2,23 +2,20 @@ const character = "#";
 const count = 8;
 const rows = [];
 
-function padRow(name) {
-  return name;
-}
-function addTwoNumbers(a, b) {
-  return a + b;
+function padRow(rowNumber, rowCount) {
+  return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
 }
 
-const sum = addTwoNumbers(5, 10);
-console.log(sum);
+// TODO: use a different type of loop
+/*for (let i = 1; i <= count; i++) {
+  rows.push(padRow(i, count));
+}*/
 
-const call = padRow("CamperChan");
-console.log(call);
-
-
-for (let i = 0; i < count; i = i + 1) {
-  rows.push(character.repeat(i + 1))
+/*
+while (rows.length < count) {
+  rows.push(padRow(rows.length + 1, count));
 }
+*/
 
 let result = ""
 
