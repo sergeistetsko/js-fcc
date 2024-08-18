@@ -124,6 +124,13 @@ const pauseSong = () => {
   audio.pause()
 }
 
+const playNextSong = () => {
+  if (userData?.currentSong === null) {
+    playSong(userData?.songs[0].id)
+  } else {
+    const currentSongIndex = getCurrentSongIndex()
+  }
+}
 // const printGreeting = () => {
 //   console.log("Hello there!");
 // };
@@ -156,7 +163,9 @@ const renderSongs = (array) => {
   playlistSongs.innerHTML = songsHTML
 }
 
-const getCurrentSongIndex = () => {}
+const getCurrentSongIndex = () => {
+  return userData?.songs.indexOf(userData?.currentSong)
+}
 
 pauseButton.addEventListener('click', pauseSong)
 
